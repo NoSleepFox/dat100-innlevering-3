@@ -36,6 +36,9 @@ public class Blogg {
 
     public int finnInnlegg(Innlegg innlegg) {
         for (int i = 0; i < innleggtabell.length; i++) {
+            if (innleggtabell[i] == null) {
+                continue;
+            }
             if (innleggtabell[i].erLik(innlegg)) {
                 return i;
             }
@@ -46,6 +49,9 @@ public class Blogg {
 
     public boolean finnes(Innlegg innlegg) {
         for (Innlegg i : innleggtabell) {
+            if (i == null) {
+                continue;
+            }
             if (i.erLik(innlegg)) {
                 return true;
             }
