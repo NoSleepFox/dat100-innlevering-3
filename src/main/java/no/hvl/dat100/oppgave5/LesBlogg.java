@@ -1,19 +1,13 @@
 package no.hvl.dat100.oppgave5;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.Scanner;
 
-import no.hvl.dat100.common.TODO;
-import no.hvl.dat100.oppgave1.*;
-import no.hvl.dat100.oppgave2.*;
-import no.hvl.dat100.oppgave3.*;
-
-import javax.swing.JOptionPane;
+import no.hvl.dat100.oppgave1.Innlegg;
+import no.hvl.dat100.oppgave2.Bilde;
+import no.hvl.dat100.oppgave2.Tekst;
+import no.hvl.dat100.oppgave3.Blogg;
 
 public class LesBlogg {
 
@@ -24,15 +18,15 @@ public class LesBlogg {
 
         Blogg blogg = null;
 
-        try{
-            String filsti = mappe + "/"+ filnavn;
+        try {
+            String filsti = mappe + "/" + filnavn;
             File fil = new File(filsti);
             Scanner scanner = new Scanner(fil);
 
             int antall = Integer.parseInt(scanner.nextLine());
 
-            blogg= new Blogg(antall);
-            while(scanner.hasNextLine()){
+            blogg = new Blogg(antall);
+            while (scanner.hasNextLine()) {
                 String type = scanner.nextLine();
 
                 int id = Integer.parseInt(scanner.nextLine());

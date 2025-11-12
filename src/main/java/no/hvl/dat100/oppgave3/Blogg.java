@@ -78,8 +78,11 @@ public class Blogg {
 
     @Override
     public String toString() {
-        String return_string = "Antall innlegg: " + innleggtabell.length + "\n";
+        String return_string = innleggtabell.length + "\n";
         for (Innlegg i : innleggtabell) {
+            if (i == null) {
+                continue;
+            }
             return_string += i.toString();
         }
         return return_string;
